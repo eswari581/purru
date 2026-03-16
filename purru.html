@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Blood Bank Dashboard</title>
+
+<link rel="stylesheet" href="purru.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- Sidebar -->
+
+<div class="sidebar">
+
+<h2><i class="fa-solid fa-heart"></i> Blood Bank</h2>
+
+<ul>
+
+<li onclick="showPage('dashboard')">
+<i class="fa-solid fa-chart-line"></i> Dashboard
+</li>
+
+<li onclick="showPage('addDonor')">
+<i class="fa-solid fa-user-plus"></i> Add Donor
+</li>
+
+<li onclick="showPage('donorList')">
+<i class="fa-solid fa-users"></i> Donor List
+</li>
+
+</ul>
+
+</div>
+
+<!-- Main -->
+
+<div class="main">
+
+<!-- DASHBOARD -->
+
+<div id="dashboard" class="page">
+
+<h1>Dashboard</h1>
+
+<div class="cards">
+
+<div class="card">
+<i class="fa-solid fa-users"></i>
+<h3>Total Donors</h3>
+<p id="totalDonors">0</p>
+</div>
+
+<div class="card">
+<i class="fa-solid fa-droplet"></i>
+<h3>A+ Donors</h3>
+<p id="apos">0</p>
+</div>
+<div class="card">
+<i class="fa-solid fa-droplet"></i>
+<h3>B+ Donors</h3>
+<p id="bpos">0</p>
+</div>
+
+<div class="card">
+<i class="fa-solid fa-heart"></i>
+<h3>O+ Donors</h3>
+<p id="opos">0</p>
+</div>
+
+<div class="card">
+<i class="fa-solid fa-heart"></i>
+<h3>AB+ Donors</h3>
+<p id="abpos">0</p>
+</div>
+
+</div>
+
+<h2>Blood Statistics</h2>
+
+<canvas id="bloodChart"></canvas>
+
+</div>
+
+<!-- ADD DONOR -->
+
+<div id="addDonor" class="page">
+
+<h1>Add Donor</h1>
+
+<form id="donorForm">
+
+<input type="text" id="name" placeholder="Name" required>
+
+<select id="blood">
+
+<option>A+</option>
+<option>B+</option>
+<option>O+</option>
+<option>AB+</option>
+
+</select>
+
+<input type="text" id="city" placeholder="City">
+
+<input type="text" id="phone" placeholder="Phone">
+
+<button type="submit">Add Donor</button>
+
+</form>
+
+</div>
+
+<!-- DONOR LIST -->
+
+<div id="donorList" class="page">
+
+<h1>Donor List</h1>
+
+<input type="text" id="search"
+placeholder="Search donor..."
+onkeyup="searchDonor()">
+
+<table id="donorTable">
+
+<tr>
+<th>Name</th>
+<th>Blood</th>
+<th>City</th>
+<th>Phone</th>
+<th>Action</th>
+</tr>
+
+</table>
+
+</div>
+
+</div>
+
+</div>
+
+<script src="purru.js"></script>
+
+</body>
+</html>
